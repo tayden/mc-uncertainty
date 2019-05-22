@@ -9,7 +9,7 @@ Uncertainty estimation functions for use with Monte Carlo sampled model outputs.
 ## Usage
 
 ```python
-import mc_uncertaint as mcu
+import mc_uncertainty as mcu
 
 # All functions accept data with shape (mc_samples, n, classes)
 data = np.array(...
