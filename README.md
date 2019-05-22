@@ -1,4 +1,5 @@
 # MC Uncertainty
+
 Uncertainty estimation functions for use with Monte Carlo sampled model outputs.
 
 ## Installation
@@ -8,22 +9,20 @@ Uncertainty estimation functions for use with Monte Carlo sampled model outputs.
 ## Usage
 
 ```python
+import mc_uncertaint as mcu
+
 # All functions accept data with shape (mc_samples, n, classes)
 data = np.array(...
 
 # Variance
-from mc_uncertainty import variance
-print(variance(data))  # shape: [n, classes]
+print(mcu.variance(data).shape)  # [n, classes]
 
 # Entropy
-from mc_uncertainty import entropy
-print(entropy(data))  # shape: [mc_samples, n]
+print(mcu.entropy(data).shape)  # [mc_samples, n]
 
 # Predicted entropy
-from mc_uncertainty import predicted_entropy
-print(predicted_entropy(data))  # shape: [n,]
+print(mcu.predicted_entropy(data).shape)  # [n,]
 
 # Mutual information
-from mc_uncertainty import mutual_information
-print(mutual_information(data))  # shape: [n,]
+print(mcu.mutual_information(data).shape)  # [n,]
 ```
