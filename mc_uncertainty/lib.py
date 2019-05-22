@@ -13,11 +13,11 @@ def entropy(data):
 
 def predicted_entropy(data):
     """Data is expected to have shape (mc_samples, n, classes)."""
-    return np.mean(entropy(data), axis=0)
+    return entropy(np.mean(data, axis=0))
 
 
 def mutual_information(data):
     """Data is expected to have shape (mc_samples, n, classes).""" 
-    entropy_exp_p = entropy(np.mean(data, axis=0))
+    entropy_exp_p = predicted_entropy(data)
     exp_entropy = np.mean(entropy(data), axis=0)
     return entropy_exp_p - exp_entropy
